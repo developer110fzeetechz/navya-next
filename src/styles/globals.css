@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.fa {
+    font-size: 20px;
+}
+.iti {
+    width: 100%;
+}
+.iti__flag {
+    background-color: transparent;
+}
+.iti__selected-flag {
+    background-color: #fff;
+}
+.iti__flag-container {
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+/* ------------------css------------------ */
+.navya-overview-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #ffffff, #f8f9fa);
+    }
+    
+    .navya-overview-hero__animated-items {
+    position: relative;
+    }
+    
+    .navya-overview-hero__headlines-container {
+    overflow: hidden;
+    height: 3rem;
+    }
+    
+    .navya-overview-hero__animating-headlines-wrapper {
+    animation: scrollHeadlines 6s infinite linear;
+    }
+    
+    .navya-overview-hero__animating-headline {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: fadeInOut 6s infinite;
+    }
+    
+    .navya-overview-hero__static-text {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #5f6368;
+    }
+    
+    @keyframes fadeInOut {
+    0%, 80% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    100% {
+    opacity: 0;
+    transform: translateY(-100%);
+    }
+    }
+    
+    @keyframes scrollHeadlines {
+    0%, 20% { transform: translateY(0); }
+    25%, 45% { transform: translateY(-100%); }
+    50%, 70% { transform: translateY(-200%); }
+    75%, 95% { transform: translateY(-300%); }
+    }
+    
+    @keyframes blink {
+      50% {
+        border-right-color: transparent; /* Make the cursor invisible */
+      }
+    }
+    
+      /* Typewriter animation */
+      .typewriter-text {
+          overflow: hidden;
+          border-right: .15em solid #000;
+          white-space: nowrap;
+          animation: typing 3s steps(30, end) infinite, blink .75s step-end infinite;
+      }
+    
+      /* Scroll-triggered animation */
+      .fade-in-up {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+    
+      .fade-in-up.active {
+          opacity: 1;
+          transform: translateY(0);
+      }
+        /* Floating circles (doodles) for modern high-tech effect */
+      .floating-circle {
+          position: fixed;
+          border-radius: 50%;
+          background: rgba(102, 252, 241, 0.2);
+          animation: float 8s infinite ease-in-out;
+          pointer-events: none;
+          z-index: 0;
+      }
+    
+      /* Individual circle sizes and positions */
+      .circle1 { width: 150px; height: 150px; top: 10%; left: 20%; }
+      .circle2 { width: 100px; height: 100px; top: 30%; right: 15%; }
+      .circle3 { width: 200px; height: 200px; bottom: 20%; left: 30%; }
+    
+      /* Animation for floating effect */
+      @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-30px); }
+      }
+    
+    
+      .dropdown {
+                position: relative;
+            }
+    
+            .dropdown:hover .dropdown-menu,
+            .dropdown:focus-within .dropdown-menu {
+                display: block;
+            }
+    
+            .dropdown-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 10;
+                min-width: 200px;
+                padding: 10px 0;
+                background-color: white;
+                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+                border-radius: 8px;
+                transition: all 0.3s ease-in-out;
+            }
+    
+            .dropdown-menu a {
+                display: block;
+                padding: 10px 20px;
+                color: #333;
+                text-decoration: none;
+                font-weight: 500;
+            }
+    
+            .dropdown-menu a:hover {
+                background-color: #f0f4f8;
+                color: #0056b3;
+            }
+    
+            /* Arrow styling for dropdown */
+            .dropdown-arrow {
+                margin-left: 5px;
+                font-size: 0.75rem;
+                transition: transform 0.3s ease-in-out;
+            }
+    
+            .dropdown:hover .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+    
+            .feature-item:hover {
+                transform: scale(1.05);
+                transition: transform 0.2s ease-in-out;
+            }
+    
+            .highlighted {
+                color: #007bff;
+                font-weight: bold;
+            }
+    
+            .image-placeholder img {
+                width: 100%;
+                height: auto;
+            }
