@@ -1,8 +1,16 @@
 'use-client'
+import { useData } from '@/context/useData'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 const Header = () => {
+  const {userToken,setUserToken}=useData()
+  const router = useRouter()
+  const logout =()=>{
+    setUserToken('')
+    router.push('/login')
+  }
   return (
     <header className="bg-white shadow-md sticky top-0 z-10">
   <div className="container mx-auto flex items-center justify-between py-4 px-6">
@@ -31,7 +39,15 @@ const Header = () => {
       <a href="/#news" className="text-gray-700 hover:text-blue-600 transition duration-200">News</a>
       <a href="/#community" className="text-gray-700 hover:text-blue-600 transition duration-200">Community</a>
       <Link href="/contactus" className="text-gray-700 hover:text-blue-600 transition duration-200">Contact us</Link>
+     
+        {
+          userToken ? <><button 
+          onClick={logout}
+          className="text-white bg-blue-600 px-4 py-2 rounded-full shadow hover:bg-blue-700 transition duration-200">Logout</button></>
+          :
+
       <Link href="/login" className="text-white bg-blue-600 px-4 py-2 rounded-full shadow hover:bg-blue-700 transition duration-200">Login/Signup</Link>
+        }
     </nav>
     {/* Hamburger Button */}
     <button id="hamburger-button" className="md:hidden text-gray-700">

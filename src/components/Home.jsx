@@ -3,11 +3,14 @@ import './animating.js'
 import FAQ from './Ui/FAQ.jsx';
 import FeaturesSection from './FeaturedSection.jsx';
 import Abcd from '@/utils/Abcd.jsx';
+import { useLoader } from '@/context/useLoader.jsx';
 
 
 // import {features} from './'
 
 const Home = () => {
+    const {isLoading, setIsLoading}=useLoader()
+    
 
     useEffect(() => {
 
